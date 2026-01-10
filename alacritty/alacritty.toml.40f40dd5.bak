@@ -1,0 +1,14 @@
+
+[env]
+TERM = "xterm-256colour"
+
+[window]
+padding.x = 10
+padding.y = 10
+
+opacity = 0.8
+blur = true 
+
+[font]
+normal.family = "MesloLGS Nerd Font Mono"
+size = 18
