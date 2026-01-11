@@ -11,7 +11,7 @@ blur = true
 
 [font]
 normal.family = "JetBrainsMono NFM"
-size = 15
+size = 14
 
 [[keyboard.bindings]]
 key = "Return"

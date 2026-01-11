@@ -19,6 +19,9 @@ require("lazy").setup({ { import = "tjkott.plugins" },
       enabled = true,
       notify = false,
     },
+    rocks = {
+      enabled = false,
+    },
     change_detection = {
       notify = false,
     },

@@ -4,6 +4,8 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
+    "WhoIsSethDaniel/mason-tool-installer.nvim", 
+    -- helpful for installing via mason which aren't language server.
   },
   config = function()
     -- import mason
@@ -19,6 +21,9 @@ return {
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
+    -- import mason-tool-installer
+    local mason_tool_installer = require("mason-tool-installer")
+
     -- enable mason and configure icons
     mason.setup({
       ui = {
@@ -27,6 +32,14 @@ return {
           package_pending = "➜",
           package_uninstalled = "✗",
         },
+      },
+    })
+
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "eslint_d", -- js linter
       },
     })
 
