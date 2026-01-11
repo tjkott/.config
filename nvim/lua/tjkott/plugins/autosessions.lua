@@ -6,6 +6,19 @@ return {
     auto_session.setup({
       auto_restore_enabled = false,
       auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
+
+      -- bypass file explorer from being saved as last used session
+      bypass_session_save_file_types = { "alpha", "dashboard", "NvimTree" },
+
+      -- close NvimTree before saving session
+      pre_save_cmds = {
+        function()
+          local nvim_tree_api = pcall(require, "nvim-tree.api")
+          if nvim_tree_api then
+            vim.cmd("NvimTreeClose")
+          end
+        end,
+      },
     })
 
     local keymap = vim.keymap

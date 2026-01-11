@@ -13,9 +13,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- path to folder which will hold all the plugins. 
-require("lazy").setup("return {
-  "kylechui/nvim-surround",
-  event = { "BufReadPre", "BufNewFile" },
-  version = "*", -- Use for stability; omit to use `main` branch for the latest features
-  config = true,
-}
+require("lazy").setup({ { import = "tjkott.plugins" }, 
+{ import = "tjkott.plugins.lsp"}, }, {
+    checker = {
+      enabled = true,
+      notify = false,
+    },
+    change_detection = {
+      notify = false,
+    },
+})

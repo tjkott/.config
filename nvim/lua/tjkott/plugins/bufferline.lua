@@ -8,6 +8,11 @@ return {
     options = {
       mode = "tabs",
       separator_style = "slant",
+      close_command = function(bufnum)
+        if vim.fn.tabpagenr("$") > 1 then
+          vim.cmd("tabclose")
+        end
+      end,
     },
   },
 }
