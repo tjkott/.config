@@ -47,6 +47,8 @@ return {
 		end,
 	},
 	{
+		-- autotag setup
+		-- -- uses treesitter for context for tag completion.
 		"windwp/nvim-ts-autotag",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
