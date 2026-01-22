@@ -35,3 +35,6 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/thejanakottawatta/.bun/_bun" ] && source "/Users/thejanakottawatta/.bun/_bun"
