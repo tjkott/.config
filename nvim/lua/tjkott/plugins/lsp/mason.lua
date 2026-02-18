@@ -59,6 +59,7 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
+        "r_language_server",
       },
       -- handlers for setting up LSP servers
       handlers = {

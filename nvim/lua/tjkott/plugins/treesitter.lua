@@ -33,6 +33,9 @@ return {
 					"query",
 					"vimdoc",
 					"c",
+					"r",
+					"rnoweb",
+					"latex",
 				},
 				incremental_selection = {
 					enable = true,
