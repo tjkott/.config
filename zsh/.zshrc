@@ -38,3 +38,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # bun completions
 [ -s "/Users/thejanakottawatta/.bun/_bun" ] && source "/Users/thejanakottawatta/.bun/_bun"
+
+# opencode
+export PATH=/Users/thejanakottawatta/.opencode/bin:$PATH

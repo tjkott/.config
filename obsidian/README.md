@@ -2,11 +2,12 @@
 
 This README documents all available keymaps and snippets for the Obsidian LaTeX Suite plugin as configured in `obsidian_later_suite_snippets.js`.
 
-## Recent Additions (from Video Transcript)
+## Recent Additions (from Video Transcript & Custom Requests)
 
 | Trigger | Replacement | Mode | Description |
 | --- | --- | --- | --- |
-| `K` | `$$0$` | Text (Auto, Word) | Enter inline math mode |
+| `mk` | `$ $0 $ $1` | Text (Auto) | Enter inline math mode. Press **Tab** to jump out. |
+| `K` | `$$\n\\begin{align}\n$0\n\\end{align}\n$$$1` | Text (Auto, Word) | Enter an align block. Press **Tab** to jump out. |
 | `CK` | `` `$0`$1 `` | Text (Word) | Insert backticks for code/text |
 | `sum` | `\sum_{$0}^{$1}` | Math (Auto) | Summation with lower and upper bounds |
 
@@ -17,27 +18,23 @@ This README documents all available keymaps and snippets for the Obsidian LaTeX 
 ### Math Mode Entry
 | Trigger | Replacement | Options |
 | --- | --- | --- |
-| `mk` | `$ $` | Text (Auto) |
-| `K` | `$ $` | Text (Auto, Word) |
-| `dm` | `$$ 
- 
- $$` | Text (Auto, Word) |
-| `beg` | `\begin{} 
- 
- \end{}` | Math (Auto) |
+| `mk` | `$ $0 $ $1` | Text (Auto) |
+| `K` | `align block` | Text (Auto, Word) |
+| `dm` | `$$ \n $0 \n $$` | Text (Auto, Word) |
+| `beg` | `\begin{$0} \n $1 \n \end{$0}` | Math (Auto) |
 
 ### Text Environment
 | Trigger | Replacement | Options |
 | --- | --- | --- |
 | `CK` | `` `$0`$1 `` | Text (Word) |
-| `text` | `	ext{}` | Math (Auto) |
-| `"` | `	ext{}` | Math (Auto) |
+| `text` | `\text{$0}` | Math (Auto) |
+| `"` | `\text{$0}` | Math (Auto) |
 
 ### Greek Letters (Math Mode)
 Use `@` or `:` prefix followed by a letter.
 - `@a` -> `\alpha`, `@b` -> `\beta`, `@g` -> `\gamma`, `@G` -> `\Gamma`
 - `@d` -> `\delta`, `@D` -> `\Delta`, `@e` -> `\epsilon`, `:e` -> `\varepsilon`
-- `@z` -> `\zeta`, `@t` -> `	heta`, `@T` -> `\Theta`, `:t` -> `\vartheta`
+- `@z` -> `\zeta`, `@t` -> `\theta`, `@T` -> `\Theta`, `:t` -> `\vartheta`
 - `@i` -> `\iota`, `@k` -> `\kappa`, `@l` -> `\lambda`, `@L` -> `\Lambda`
 - `@s` -> `\sigma`, `@S` -> `\Sigma`, `@u` -> `\upsilon`, `@U` -> `\Upsilon`
 - `@o` -> `\omega`, `@O` -> `\Omega`
@@ -48,11 +45,11 @@ Use `@` or `:` prefix followed by a letter.
 | --- | --- | --- |
 | `sr` | `^{2}` | Math (Auto) |
 | `cb` | `^{3}` | Math (Auto) |
-| `rd` | `^{}` | Math (Auto) |
-| `_` | `_{}` | Math (Auto) |
-| `sq` | `\sqrt{}` | Math (Auto) |
-| `//` | `\frac{}{}` | Math (Auto) |
-| `ee` | `e^{}` | Math (Auto) |
+| `rd` | `^{$0}` | Math (Auto) |
+| `_` | `_{$0}` | Math (Auto) |
+| `sq` | `\sqrt{$0}` | Math (Auto) |
+| `//` | `\frac{$0}{$1}` | Math (Auto) |
+| `ee` | `e^{$0}` | Math (Auto) |
 | `invs` | `^{-1}` | Math (Auto) |
 | `conj` | `^{*}` | Math (Auto) |
 
@@ -68,11 +65,10 @@ Use `@` or `:` prefix followed by a letter.
 | `ooo` | `\infty` | Math (Auto) |
 | `sum` | `\sum_{$0}^{$1}` | Math (Auto) |
 | `prod` | `\prod` | Math (Auto) |
-| `lim` | `\lim_{n 	o \infty}` | Math (Auto) |
+| `lim` | `\lim_{n \to \infty}` | Math (Auto) |
 | `+-` | `\pm` | Math (Auto) |
-| `!=` | `
-eq` | Math (Auto) |
-| `->` | `	o` | Math (Auto) |
+| `!=` | `\neq` | Math (Auto) |
+| `->` | `\to` | Math (Auto) |
 | `=>` | `\implies` | Math (Auto) |
 | `RR` | `\mathbb{R}` | Math (Auto) |
 | `ZZ` | `\mathbb{Z}` | Math (Auto) |
@@ -87,16 +83,17 @@ eq` | Math (Auto) |
 | `align` | `align` |
 
 ### Brackets
-- `avg` -> `\langle angle`
-- `norm` -> `\lvert vert`
-- `Norm` -> `\lVert Vert`
+- `avg` -> `\langle \dots \rangle`
+- `norm` -> `\lvert \dots \rvert`
+- `Norm` -> `\lVert \dots \rVert`
 - `mod` -> `| |`
-- `lr(` -> `\left( ight)`
+- `lr(` -> `\left( \dots \right)`
 
 ---
 
 ## Tips & Others (from Video)
 
+- **Jump Out:** For most new snippets, press **Tab** to jump out of the math or bracket environment.
 - **Templates:** Use the Obsidian Templates plugin to create a "Math Template" with Idea and Formal sections.
 - **Images:** Use `math.io` for drawing functions and export as SVG.
 - **OCR:** Use "Simple Text" AI tool to extract LaTeX from screenshots of formulas.
